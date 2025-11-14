@@ -1,0 +1,12 @@
+/* reduce space above and below unordered and ordered lists */
+.markdown-preview-view ul,
+.markdown-preview-view ol {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+/* reduce space between individual list items */
+.markdown-preview-view li {
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+}

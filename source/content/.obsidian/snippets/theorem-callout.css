@@ -1,0 +1,26 @@
+/* ===== Custom 'theorem' callout ===== */
+.callout[data-callout="theorem"] {
+  --callout-color: 255, 80, 80; /* RGB for red tone */
+  --callout-icon: lucide-function-square; /* nice mathematical icon */
+  
+  background-color: rgba(255, 80, 80, 0.15); /* soft red background */
+  border: 1.5px solid rgba(255, 80, 80, 0.8);
+  border-left: 6px solid rgba(255, 60, 60, 0.9);
+  border-radius: 10px;
+  padding: 0.8em 1em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.callout[data-callout="theorem"] .callout-title {
+  font-weight: 700;
+  color: rgb(200, 0, 0);
+  font-family: "Times New Roman", serif;
+}
+
+/* Body text styling */
+.callout[data-callout="theorem"] .callout-content {
+  color: #f0f0f0;
+  font-style: italic;
+  line-height: 1.6;
+}

@@ -1,1 +1,8 @@
-{}
+{
+  "enabledCssSnippets": [
+    "reduce-spacing",
+    "theorem-callout",
+    "key-insight-callout",
+    "definition-callout"
+  ]
+}

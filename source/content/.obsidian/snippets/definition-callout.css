@@ -1,0 +1,26 @@
+/* ===== Custom 'definition' callout ===== */
+.callout[data-callout="definition"] {
+  --callout-color: 80, 150, 255; /* soft blue tone */
+  --callout-icon: lucide-book-text;
+
+  background-color: rgba(80, 150, 255, 0.12); /* gentle blue glow for dark themes */
+  border: 1.5px solid rgba(80, 150, 255, 0.65);
+  border-left: 6px solid rgba(80, 150, 255, 0.85);
+  border-radius: 10px;
+  padding: 0.8em 1em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Title styling */
+.callout[data-callout="definition"] .callout-title {
+  font-weight: 700;
+  color: rgb(150, 200, 255);
+  font-family: "Times New Roman", serif;
+  letter-spacing: 0.3px;
+}
+
+/* Content styling */
+.callout[data-callout="definition"] .callout-content {
+  color: #f0f0f0; /* bright, readable on dark background */
+  line-height: 1.6;
+}

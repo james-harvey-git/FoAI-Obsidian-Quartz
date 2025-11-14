@@ -1,0 +1,27 @@
+/* ===== Custom 'key-insight' callout ===== */
+.callout[data-callout="key-insight"] {
+  --callout-color: 255, 200, 0; /* golden yellow tone */
+  --callout-icon: lucide-lightbulb; /* lightbulb icon */
+
+  background-color: rgba(255, 200, 0, 0.1); /* soft glow on dark backgrounds */
+  border: 1.5px solid rgba(255, 200, 0, 0.7);
+  border-left: 6px solid rgba(255, 200, 0, 0.9);
+  border-radius: 10px;
+  padding: 0.8em 1em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Title styling */
+.callout[data-callout="key-insight"] .callout-title {
+  font-weight: 700;
+  color: rgb(255, 215, 100);
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.4px;
+}
+
+/* Body text styling */
+.callout[data-callout="key-insight"] .callout-content {
+  color: #f8f8f8; /* bright white for dark backgrounds */
+  font-style: normal;
+  line-height: 1.6;
+}
