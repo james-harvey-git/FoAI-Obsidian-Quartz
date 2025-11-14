@@ -1,0 +1,72 @@
+{
+  "smart_templates_plugin": {
+    "smart_completions": {
+      "chat_model": {
+        "adapter": "ollama"
+      }
+    }
+  },
+  "smart_contexts": {
+    "smart_templates_plugin": {
+      "templates": {
+        "0": {
+          "before": "<context_primary path=\"{{ITEM_PATH}}\" mtime=\"{{ITEM_TIME_AGO}}\">",
+          "after": "</context_primary>"
+        },
+        "1": {
+          "before": "<context_linked path=\"{{ITEM_PATH}}\" mtime=\"{{ITEM_TIME_AGO}}\">",
+          "after": "</context_linked>"
+        },
+        "-1": {
+          "before": "<context>\n<file_tree>\n{{FILE_TREE}}\n</file_tree>",
+          "after": "</context>"
+        }
+      }
+    }
+  },
+  "is_obsidian_vault": true,
+  "smart_blocks": {
+    "embed_blocks": true,
+    "min_chars": 200
+  },
+  "smart_sources": {
+    "min_chars": 200,
+    "embed_model": {
+      "adapter": "transformers",
+      "transformers": {
+        "legacy_transformers": false,
+        "model_key": "TaylorAI/bge-micro-v2"
+      },
+      "TaylorAI/bge-micro-v2": {}
+    }
+  },
+  "excluded_headings": "",
+  "file_exclusions": "Untitled",
+  "folder_exclusions": "",
+  "language": "en",
+  "new_user": true,
+  "re_import_wait_time": 13,
+  "smart_chat_threads": {
+    "chat_model": {
+      "adapter": "ollama",
+      "ollama": {}
+    },
+    "active_thread_key": "",
+    "system_prompt": "",
+    "detect_self_referential": true,
+    "review_context": true,
+    "stream": true,
+    "language": "en",
+    "modifier_key_to_send": "shift",
+    "use_tool_calls": true
+  },
+  "smart_notices": {
+    "muted": {}
+  },
+  "smart_view_filter": {
+    "expanded_view": false,
+    "render_markdown": true,
+    "show_full_path": false
+  },
+  "version": ""
+}
