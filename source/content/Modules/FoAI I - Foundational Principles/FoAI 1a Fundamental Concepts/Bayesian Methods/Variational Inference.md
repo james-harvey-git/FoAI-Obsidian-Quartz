@@ -6,8 +6,7 @@ The procedure for variational inference is as follows:
 \text{KL}(P\lvert  \rvert Q)=\int \log \left( \frac{p(x)}{q(x)} \right)p(x)dx
 $$
 - The distribution $q_{\phi_{i}^*}(Z|X_{i})$, where $$
-\phi_{i}^*= \arg\min_{\phi_{i}}\text{KL}(q_{\phi_{i}}(Z|X_{i})\lvert  \rvert p_{\theta}(Z|X_{i}) )
-$$
+\phi_{i}^*= \arg\min_{\phi_{i}}\text{KL}(q_{\phi_{i}}(Z|X_{i})\lvert  \rvert p_{\theta}(Z|X_{i}) )$$
   is a variational approximation of the true $p_{\theta}(Z|X_{i})$.
 
 ## Evidence Lower Bound (ELBO)
@@ -18,11 +17,9 @@ First rearrange the VI objective (the KL divergence): $$
 \text{KL}(q_{\phi_{i}}(Z|X_{i})\lvert  \rvert p_{\theta}(Z|X_{i}) ) &= \mathbb{E}_{q_{\phi_{i}}}[\log q_{\phi_{i}}(Z|X_{i})-\log p_{\theta}(Z|X_{i})] \\
 &= \mathbb{E}_{q_{\phi_{i}}}[\log q_{\phi_{i}}(Z|X_{i})-\log p_{\theta}(Z, X_{i})+\log p_{\theta}(X_{i})] \\
 &= \log p_{\theta}(X_{i})-\underbrace{ \mathbb{E}_{q_{\phi_{i}}}[\log p_{\theta}(Z,X_{i})-\log q_{\phi_{i}(Z|X_{i})}] }_{\text{A lower bound of} \log p_{\theta}(X_{i}) }
-\end{align}
-$$
+\end{align}$$
 Since the KL divergence is a strictly positive quantity for two *different* distributions, we see that the log (marginal) likelihood (i.e. evidence) $\log p_{\theta}(X_{i})$ of $X_{i}$ is lower bounded by the Evidence Lower Bound (ELBO): $$
 \begin{align}
 \mathcal{L}(\theta,\phi_{i};X_{i})&=\mathbb{E}_{q_{\phi_{i}}}[\log p_{\theta}(Z,X_{i})-\log q_{\phi_{i}}(Z|X_{i})] \\
 &= \mathbb{E}_{{q_{\phi_{i}}}}[\log p_{\theta}(X_{i}|Z)-\text{KL}(\log q_{\phi_{i}}\lvert  \rvert p(Z))] \\
-\end{align}
-$$
+\end{align}$$

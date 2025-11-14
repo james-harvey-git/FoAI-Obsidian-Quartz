@@ -20,7 +20,9 @@ $$
 - Here:
 	- $L(\theta;X)$: loss describing the data's informational content (replaces likelihood) - lower loss = higher informational content/support for that parameter value
 	- $\text{KL}(q\lvert  \rvert p )$: penalty for deviating from the prior
-- Solution is the **Generalised Bayes posterior**: $$\boxed{
+- Solution is the **Generalised Bayes posterior**: 
+$$
+\boxed{
 q^*(\theta)\propto p(\theta)\exp(-\eta L(\theta;X))}
 $$
 	Note: Also known as the **Gibbs posterior**.
@@ -29,7 +31,8 @@ $$
 >*Updating = deciding which beliefs to hold, balancing data and prior*
 
 ### The Generalised Bayesian Update
-The Generalised Bayesian Update, also known as the **Gibbs posterior** is $$
+The Generalised Bayesian Update, also known as the **Gibbs posterior** is 
+$$
 \boxed{p(\theta|X)\propto p(\theta)\exp(-\eta L(\theta;X))}
 $$
 where:
@@ -39,7 +42,8 @@ where:
 
 This update retains the Bayesian **form**, but broadens what "evidence" means.
 
-*Note: [[Bayesian Inference|Standard Bayes]] is a special case of the Generalised Bayes update:* $$
+*Note: [[Bayesian Inference|Standard Bayes]] is a special case of the Generalised Bayes update:* 
+$$
 L(\theta;X)=-\log p(X|\theta) \implies p(\theta|X)\propto p(\theta)p(X|\theta)
 $$
 ### Benefits of Generalised Bayes in an M-open world
@@ -55,11 +59,13 @@ Generalised Bayes offers a way to:
 >*Generalised Bayes is Bayesian reasoning for an imperfect world - a world with interventions.*
 
 ### Scope of the Generalised Bayes Update
-The update $$
+The update 
+$$
 p(\theta|X)\propto p(\theta)\exp(-\eta L(\theta;X))
 $$
 is only valid for **parameters that appear in the loss function** $L(\theta;X)$.
-If a component $\theta_{j}$ does not appear in $L$: $$
+If a component $\theta_{j}$ does not appear in $L$: 
+$$
 p(\theta_{j}|X)=p(\theta_{j})
 $$
 In other words, coherence requires belief revision only where the loss provides evidence - this prevents spurious updating of uninformed parametes.

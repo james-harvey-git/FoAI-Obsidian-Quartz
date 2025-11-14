@@ -120,7 +120,9 @@ For any $\theta \neq \theta_0$, $$\frac{p_{\theta}(X_1,...,X_n)}{p_{\theta_0}(X_
 >and hence, as the KL divergence is strictly positive, this quantity must vanish as $n\rightarrow\infty$.
 
 #### Posterior Collapse
-Hence: $$\Pi_t(A) \to 
+Hence: 
+$$ 
+\Pi_t(A) \to 
 
 \begin{cases}
 
@@ -130,7 +132,8 @@ Hence: $$\Pi_t(A) \to 
 
 \end{cases}
 
-\quad P_{\theta_0}\text{-a.s.}$$
+\quad P_{\theta_0} \text{-a.s.}
+$$
 and thus the limiting random measure is $\Pi_\infty = \delta_{\theta_0}$.
 
 In other words, uncertainty about the parameter $\theta$ as characterised by the posterior vanishes in the limit of large $n$, and our Bayesian framework collapses to the frequentist point approximation. 

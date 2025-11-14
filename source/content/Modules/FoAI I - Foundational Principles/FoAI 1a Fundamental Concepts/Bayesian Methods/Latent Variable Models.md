@@ -1,10 +1,12 @@
-The De Finetti representation theorem (see [[Statistical Measure Theory#De Finetti's Representation Theorem|De Finetti's Representation Theorem]]) can be applied in reverse: $$\int \prod_{i=1}^n p(X_i|\theta)p(\theta)d\theta \rightarrow p(X_1=x_1,\dots,X_n=x_n)$$
+The De Finetti representation theorem (see [[Statistical Measure Theory#De Finetti's Representation Theorem|De Finetti's Representation Theorem]]) can be applied in reverse:$$
+\int \prod_{i=1}^n p(X_i|\theta)p(\theta)d\theta \rightarrow p(X_1=x_1,\dots,X_n=x_n)$$
 If we define a **latent variable model** (LVM) then the marginal joint distribution must be exchangeable. This allows us to model complex exchangeable distributions in an *indirect* way.
 
 Suppose we have $N$ data points $X_{i}, i=1,\dots,N$ with **complex, high dimensional** structure. 
 LVMs aim to explain this complex structure we see in the *observed* $\{ X_{i} \}_{i=1}^N$ by a much simpler structure using some *unobserved* latent variables $\{ Z_{i} \}_{i=1}^N$. 
 
-A simple **latent variable model** has the form: $$
+A simple **latent variable model** has the form:  
+$$
 \begin{aligned}
 
 X \mid Z &\sim N(\mu(Z), \sigma^2(Z)), \\
@@ -28,16 +30,14 @@ If:
 - Perform optimisation via stochastic gradient descent
 
 Then the latent variable model is called a **Variational Autoencoder** (VAE): $$
-[\text{VAE}]=[\text{Latent Variable Model}] \ + \ [\text{Inference Choices}]
-$$
+[\text{VAE}]=[\text{Latent Variable Model}] \ + \ [\text{Inference Choices}]$$
 ### VAE Components
 **Encoder** - maps data $X$ to distribution over latent variables $Z$
 
 **Decoder** - maps latent variable $Z$ to distribution over data $X$
 
 **Loss function** $$
-l(\theta,\phi) = -\mathbb{E}_{Z\sim q_{\theta}}[\log p_{\phi}(X|Z)]+\text{KL}(q_{\theta}(Z|X)\lvert  \rvert p(Z) )
-$$
+l(\theta,\phi) = -\mathbb{E}_{Z\sim q_{\theta}}[\log p_{\phi}(X|Z)]+\text{KL}(q_{\theta}(Z|X)\lvert  \rvert p(Z) )$$
 
 ## Bayesian Latent Variable Model
 >[!definition] Definition: Bayesian Latent Variable Model (BLVM)
@@ -47,21 +47,18 @@ $$
 >2. Conditioned on $Z_{i}$, a **likelihood** $p_{\theta}(\cdot|Z_{i})$ links the latent $Z_{i}$ to the observable data $X_{i}$. Here $\theta$ represents some global, trainable parameter of the likelihood.
 >
 >With $\mathbf{X}=\{ X_{i} \}_{i=1}^N, \ \mathbf{Z}=\{ Z_{i} \}_{i=1}^N$, the **joint model** of the BLVM can therefore be written as $$
->p_{\theta}(\mathbf{X},\mathbf{Z})=\prod_{i=1}^{N}p_{\theta}(X_{i}|Z_{i})p(Z_{i})
-$$
+>p_{\theta}(\mathbf{X},\mathbf{Z})=\prod_{i=1}^{N}p_{\theta}(X_{i}|Z_{i})p(Z_{i})$$
 
 
 ### Computation Challenges
 There are computational challenges associated with BLVMs:
 1. **Fit the model** $p_{\theta}(X_{i}|Z_{i})$ **by maximising the marginal likelihood is infeasible:**
 	- As discussed in [[Methods for Posterior Inference]], generally the marginal likelihood of data $\mathbf{X}$, $$
-p_{\theta}(\mathbf{X})=\int p_{\theta}(\mathbf{X},\mathbf{Z})d\mathbf{Z}=\prod_{i=1}^{N}\int p_{\theta}(X_{i}|Z_{i})p(Z_{i})dZ_{i}=\prod_{i=1}^{N} p_{\theta}(X_{i}),
-$$
+p_{\theta}(\mathbf{X})=\int p_{\theta}(\mathbf{X},\mathbf{Z})d\mathbf{Z}=\prod_{i=1}^{N}\int p_{\theta}(X_{i}|Z_{i})p(Z_{i})dZ_{i}=\prod_{i=1}^{N} p_{\theta}(X_{i}),$$
 	  is computationally intractable. As a result, one cannot learn $\theta$ directly by maximising the marginal likelihood $p_{\theta}(\mathbf{X})$ with respect to $\theta$.
 2. **Perform posterior inference can be computationally challenging:**
 	- Sampling from the posterior distribution of the latent variable $$
-p_{\theta}(Z_{i}|X_{i})=\frac{p_{\theta}(X_{i}|Z_{i})p(Z_{i})}{p_{\theta}(X_{i})} \propto p_{\theta}(X_{i}|Z_{i})p(Z_{i})
-$$
+p_{\theta}(Z_{i}|X_{i})=\frac{p_{\theta}(X_{i}|Z_{i})p(Z_{i})}{p_{\theta}(X_{i})} \propto p_{\theta}(X_{i}|Z_{i})p(Z_{i})$$
 	  can be challenging due to the intractable normalising constant.
 
 These two challenges can be addressed through the use of [[Variational Inference]].
